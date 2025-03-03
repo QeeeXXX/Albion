@@ -1,0 +1,127 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  color: #fff;
+}
+
+/* Стили для шапки */
+.hero {
+  background-image: url("images/Fon.jpeg"); /* Путь к вашему фоновому изображению */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 80px 20px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Оверлей для контраста */
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-label {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.courses {
+  margin-top: 100px;
+}
+
+.courses-hint {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+}
+
+.courses-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.courses-list-item a {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.courses-list-item a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* Медиа-запросы для адаптации */
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 60px 15px;
+  }
+  .hero-label {
+    font-size: 32px;
+  }
+  .courses {
+    margin-top: 70px;
+  }
+  .courses-hint {
+    font-size: 18px;
+  }
+  .courses-list {
+    flex-wrap: wrap;
+  }
+  .courses-list-item a {
+    padding: 12px 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 40px 10px;
+  }
+  .hero-label {
+    font-size: 28px;
+  }
+  .courses {
+    margin-top: 50px;
+  }
+  .courses-hint {
+    font-size: 14px;
+  }
+  .courses-list {
+    gap: 10px;
+  }
+  .courses-list-item a {
+    padding: 10px 20px;
+  }
+}

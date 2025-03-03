@@ -1,0 +1,150 @@
+/* Базовые стили */
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  color: #fff; /* Основной цвет текста белый */
+}
+
+/* Стилизация шапки */
+.hero {
+  background-image: url("assets/images/Fon.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 80px 20px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Темный оверлей для фона */
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Заголовок */
+.hero-label {
+  font-size: 48px; /* Увеличенный размер для большей заметности */
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1.5s ease forwards; /* Анимация появления сверху */
+}
+
+/* Ссылки */
+.courses {
+  margin-top: 150px;
+}
+
+.courses-hint {
+  padding-bottom: 50px;
+  font-size: 26px; /* Более крупный шрифт для заметности */
+  font-weight: bold;
+  display: block;
+  animation: fadeInDown 1.5s ease forwards; /* Анимация появления снизу */
+}
+
+.courses-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.courses-list-item a {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  animation: fadeIn 1.5s ease forwards; /* Общая анимация появления */
+}
+
+.courses-list-item a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* Анимационные эффекты */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Медиазапросы для адаптивности */
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 60px 15px;
+  }
+  .hero-label {
+    font-size: 36px;
+  }
+  .courses {
+    margin-top: 70px;
+  }
+  .courses-hint {
+    font-size: 20px;
+  }
+  .courses-list {
+    flex-wrap: wrap;
+  }
+  .courses-list-item a {
+    padding: 12px 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 40px 10px;
+  }
+  .hero-label {
+    font-size: 28px;
+  }
+  .courses {
+    margin-top: 50px;
+  }
+  .courses-hint {
+    font-size: 16px;
+  }
+  .courses-list {
+    gap: 10px;
+  }
+  .courses-list-item a {
+    padding: 10px 20px;
+  }
+}
